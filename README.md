@@ -20,6 +20,8 @@ Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermuda
 -Data Pegawai
 -Data Pelajar
 -Data Nilai
+-Data Jadwal Belajar
+
 Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
 -menampilkan data yang diperlukan
 -mencari data yang diperlukan
