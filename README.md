@@ -21,7 +21,7 @@ Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermuda
 - Data Nilai
 - Data Jadwal Belajar
 
-Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
+Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Queue*, dan *Linked List*. Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
 -menampilkan data yang diperlukan
 -mencari data yang diperlukan
 -menambah data
@@ -44,7 +44,13 @@ Dalam mengerjakan proyek ini, kami membagi timeline pengerjaan proyek ini menjad
 - Tahap III (12 Mei - 17 Mei 2021 )	: Testing dan perbaikan
 - Tahap IV (Maksimal 17 Mei 2021)	: Penetapan final product
 
-Tools yang kami gunakan dalam pengerjaan aplikasi/proyek ini yaitu Github, Google Docs, Visual Studio Code, CMD. Kami menggunakan media WhatsApp dan Discord untuk berdiskusi. Pembagian kerja pada kelompok kami diutamakan dengan cara pembagian tugas per fungsi. 
+Tools yang kami gunakan dalam pengerjaan aplikasi/proyek ini yaitu :
+- Github, 
+- Google Docs, 
+- Visual Studio Code, dan 
+- CMD. 
+
+Kami menggunakan media WhatsApp dan Discord untuk berdiskusi. Pembagian kerja pada kelompok kami diutamakan dengan cara pembagian tugas per fungsi. 
 
 
 
