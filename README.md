@@ -1,4 +1,4 @@
-# JUDUL_PROYEK
+# RedelgiKu
 
 Anggota Kelompok:
 * ANGGIE FORESTRY (140810200008)
