@@ -40,7 +40,9 @@ diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan ran
 dibebaskan sesuai kreatifitas kalian
 !-->
 ![image](https://user-images.githubusercontent.com/79789750/116955287-4d8f5400-acbc-11eb-9ec1-4097a6756a92.png)
+
 ![image](https://user-images.githubusercontent.com/79789750/116956447-7f55ea00-acbf-11eb-9041-54a000aa0d0e.png)
+
 ![image](https://user-images.githubusercontent.com/79789750/116956456-854bcb00-acbf-11eb-9615-c455fb4b30e3.png)
 
 *Stack* dan *priority queue* di implementasikan dengan cara *Linked list*. Maksudnya data disimpan tidak diurutkan berdasarkan penempatan fisik, melainkan setiap elemen menunjuk ke elemen selanjutnya (implementasi pointer). Penyimpanan data ini dapat diubah secara dinamis
