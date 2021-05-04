@@ -36,7 +36,7 @@ Buat rancangan antar muka selengkap mungkin sesuai fungsi aplikasinya. rancangan
 diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan rancangan gambar
 dibebaskan sesuai kreatifitas kalian
 !-->
-
+![image](https://user-images.githubusercontent.com/79789750/116955287-4d8f5400-acbc-11eb-9ec1-4097a6756a92.png)
 
 ## Rencana Pengerjaan Projek
 Dalam mengerjakan proyek ini, kami membagi timeline pengerjaan proyek ini menjadi beberapa bagian, antara lain:
