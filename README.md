@@ -22,12 +22,13 @@ Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermuda
 - Data Jadwal Belajar
 
 Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Queue*, dan *Linked List*. Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
--menampilkan data yang diperlukan
--mencari data yang diperlukan
--menambah data
--menghapus data
--mengedit data
-
+- menampilkan data yang diperlukan -> menggunakan *stack*
+- mencari data yang diperlukan -> menggunakan *linked list*
+- menambah data -> menggunakan *linked list*
+- menghapus data -> menggunakan *linked list*
+- mengedit data -> menggunakan *linked list*
+- mengundo data -> menggunakan *stack*
+- antrian jadwal konsul(apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)-> menggunakan *priority queue*
 
 ## Gambar Rancangan Antar Muka
 <!--
