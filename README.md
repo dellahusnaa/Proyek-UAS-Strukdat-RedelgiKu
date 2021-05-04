@@ -7,7 +7,7 @@ Anggota Kelompok:
 ---
 ## Latar Belakang
 Ditengah maraknya kasus penyebaran COVID- (*Coronavirus Disease* 2019) yang terjadi, membawa dampak bagi bidang pendidikan di Indonesia. Karena penyebaran virus corona begitu cepat, untuk sementara waktu, setiap sekolah dan perguruan tinggi dengan sangat terpaksa tidak melakukan kegiatan belajar mengajar di dalam kelas atau tatap muka. Sebagai gantinya, Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim, menyarankan dan mewajibkan setiap sekolah dan institut yang ada di Tanah Air untuk melakukan pembelajaran ini secara *online* atau dalam jaringan (daring). 
-Pembelajaran daring merupakan proses belajar mengajar yang dilaksanakan secara *online* atau tidak bertatap muka langsung antar pendidik dan peserta didik. Dalam keadaan pandemi seperti ini, Bimbel Redelgi memerlukan suatu sistem data secara digital untuk mempermudah *Customer Service* dalam mengatur data yang dimiliki. Oleh karena itu, kami menghadirkan aplikasi yang bernama **RedelgiKu** yang dibuat sebagai solusi permasalahan tersebut.
+Pembelajaran daring merupakan proses belajar mengajar yang dilaksanakan secara *online* atau tidak bertatap muka langsung antar pendidik dan peserta didik. Dalam keadaan pandemi seperti ini, Bimbel Redelgi memerlukan suatu sistem data secara digital untuk mempermudah *Customer Service* dalam mengatur data yang dimiliki secara digital. Oleh karena itu, kami menghadirkan aplikasi yang bernama **RedelgiKu** yang dibuat sebagai solusi permasalahan tersebut. **RedelgiKu** hadir sebagai solusi digitalisasi data yang dimiliki oleh Bimbel Redelgi.
 
 
 ## Tujuan dan Manfaat
@@ -19,6 +19,7 @@ Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermuda
 - Data Pegawai
 - Data Peserta Didik
 - Data Jadwal Belajar
+- Dan lain-lain
 
 Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Queue*, dan *Linked List*. Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
 - menampilkan data yang diperlukan -> menggunakan *stack*
