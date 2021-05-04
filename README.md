@@ -17,8 +17,7 @@ Tujuan kami membuat aplikasi Redelgi yaitu menyediakan layanan pengaturan data s
 ## Penjelasan Aplikasi
 Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermudah Bimbel Redelgi dalam mengatur data bimbel yang dimilikinya. Data yang kami maksud antara lain:
 - Data Pegawai
-- Data Pelajar
-- Data Nilai
+- Data Peserta Didik
 - Data Jadwal Belajar
 
 Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Queue*, dan *Linked List*. Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
