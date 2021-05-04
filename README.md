@@ -31,6 +31,8 @@ Fitur *search*/cari akan di implementasikan dengan *transversal queue* berdasark
 Ketika CS memilih *undo* tumpukan paling atas *stack* akan diambil dan nilainya akan dimasukan ke note *queue* yang diubah sebelum secara terbalik
 - antrian jadwal kelas tambahan (apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)
 Dalam mengatur jadwal akan diimplementasikan menggunakan *priority queue*. Pengambilan jadwal siswa ditetapkan berdasarkan frekuensi guru mengajar. 
+Keterangan:
+*Stack* dan *priority queue* di implementasikan dengan cara *Linked list*. Maksudnya data disimpan tidak diurutkan berdasarkan penempatan fisik, melainkan setiap elemen menunjuk ke elemen selanjutnya (implementasi pointer). Penyimpanan data ini dapat diubah secara dinamis.
 
 ## Gambar Rancangan Antar Muka
 <!--
@@ -44,7 +46,6 @@ dibebaskan sesuai kreatifitas kalian
 
 ![image](https://user-images.githubusercontent.com/79789750/116956456-854bcb00-acbf-11eb-9615-c455fb4b30e3.png)
 
-*Stack* dan *priority queue* di implementasikan dengan cara *Linked list*. Maksudnya data disimpan tidak diurutkan berdasarkan penempatan fisik, melainkan setiap elemen menunjuk ke elemen selanjutnya (implementasi pointer). Penyimpanan data ini dapat diubah secara dinamis
 
 
 
