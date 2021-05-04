@@ -28,7 +28,7 @@ Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Qu
 - menghapus data -> menggunakan *linked list*
 - mengedit data -> menggunakan *linked list*
 - mengundo data -> menggunakan *stack*
-- antrian jadwal konsul(apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)-> menggunakan *priority queue*
+- antrian jadwal kelas tambahan (apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)-> menggunakan *priority queue*
 
 ## Gambar Rancangan Antar Muka
 <!--
@@ -37,6 +37,14 @@ diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan ran
 dibebaskan sesuai kreatifitas kalian
 !-->
 ![image](https://user-images.githubusercontent.com/79789750/116955287-4d8f5400-acbc-11eb-9ec1-4097a6756a92.png)
+
+*Stack* dan *priority queue* di implementasikan dengan cara *Linked list*. Maksudnya data disimpan tidak diurutkan berdasarkan penempatan fisik, melainkan setiap elemen menunjuk ke elemen selanjutnya (implementasi pointer). Penyimpanan data ini dapat diubah secara dinamis
+
+Dalam mengatur jadwal akan diimplementasikan menggunakan *priority queue*. Pengambilan jadwal siswa ditetapkan berdasarkan frekuensi guru mengajar. 
+
+Ketika CS memilih *undo* tumpukan paling atas *stack* akan diambil dan nilainya akan dimasukan ke note *queue* yang diubah sebelum secara terbalik
+
+Fitur *search*/cari akan di implementasikan dengan *transversal queue* berdasarkan kriteria dari *query* yang diinputkan.
 
 ## Rencana Pengerjaan Projek
 Dalam mengerjakan proyek ini, kami membagi timeline pengerjaan proyek ini menjadi beberapa bagian, antara lain:
