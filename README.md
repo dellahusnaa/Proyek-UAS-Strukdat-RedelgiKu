@@ -24,11 +24,14 @@ Aplikasi RedelgiKu merupakan aplikasi yang dibuat dengan tujuan untuk mempermuda
 Struktur Data yang digunakan dalam proyek RedelgiKu adalah *Stack*, *Priority Queue*, dan *Linked List*. Beberapa fitur aplikasi yang telah kami rencanakan antara lain:
 - menampilkan data yang diperlukan -> menggunakan *stack*
 - mencari data yang diperlukan -> menggunakan *linked list*
+Fitur *search*/cari akan di implementasikan dengan *transversal queue* berdasarkan kriteria dari *query* yang diinputkan.
 - menambah data -> menggunakan *linked list*
 - menghapus data -> menggunakan *linked list*
 - mengedit data -> menggunakan *linked list*
-- mengundo data -> menggunakan *stack*
-- antrian jadwal kelas tambahan (apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)-> menggunakan *priority queue*
+- mengundo data 
+Ketika CS memilih *undo* tumpukan paling atas *stack* akan diambil dan nilainya akan dimasukan ke note *queue* yang diubah sebelum secara terbalik
+- antrian jadwal kelas tambahan (apabila ada siswa yang meminta kelas tambahan, maka guru yang luang pasti akan didahulukan)
+Dalam mengatur jadwal akan diimplementasikan menggunakan *priority queue*. Pengambilan jadwal siswa ditetapkan berdasarkan frekuensi guru mengajar. 
 
 ## Gambar Rancangan Antar Muka
 <!--
@@ -40,11 +43,9 @@ dibebaskan sesuai kreatifitas kalian
 
 *Stack* dan *priority queue* di implementasikan dengan cara *Linked list*. Maksudnya data disimpan tidak diurutkan berdasarkan penempatan fisik, melainkan setiap elemen menunjuk ke elemen selanjutnya (implementasi pointer). Penyimpanan data ini dapat diubah secara dinamis
 
-Dalam mengatur jadwal akan diimplementasikan menggunakan *priority queue*. Pengambilan jadwal siswa ditetapkan berdasarkan frekuensi guru mengajar. 
 
-Ketika CS memilih *undo* tumpukan paling atas *stack* akan diambil dan nilainya akan dimasukan ke note *queue* yang diubah sebelum secara terbalik
 
-Fitur *search*/cari akan di implementasikan dengan *transversal queue* berdasarkan kriteria dari *query* yang diinputkan.
+
 
 ## Rencana Pengerjaan Projek
 Dalam mengerjakan proyek ini, kami membagi timeline pengerjaan proyek ini menjadi beberapa bagian, antara lain:
