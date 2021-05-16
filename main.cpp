@@ -44,30 +44,112 @@ void mainMenu(listPeg &head, listMurid &head){
   cout << "| Aplikasi Pengatur Data Bimbel Redelgi |" << endl;
   cout << "+---------------------------------------+" << endl;
   cout << endl;
-  cout << "Pilihan: \n";
-  cout << "A.Tampilkan data pegawai\n";
-  cout << "B.Tampilkan data murid\n";
-  cout << "C.Tambah data pegawai\n";
-  cout << "D.Tambah data murid\n";
-  cout << "E.Hapus data pegawai\n";
-  cout << "F.Hapus data murid\n";
-  cout << "G.Edit data murid\n";
-  cout << "H.Edit data murid\n";
-  cout << "I.Layanan Konsultasi\n";
-  cout << " .Tutup aplikasi\n";
-  cout << endl;
-  cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
+cout << "Pilihan: \n";
+cout << "A.Tampilkan data pegawai\n";
+cout << "B.Tampilkan data murid\n";
+cout << "C.Tambah data pegawai\n";
+cout << "D.Tambah data murid\n";
+cout << "E.Hapus data pegawai\n";
+cout << "F.Hapus data murid\n";
+cout << "G.Edit data murid\n";
+cout << "H.Edit data murid\n";
+cout << "I.Layanan Konsultasi\n";
+cout << "J.Tampilkan data pegawai menurut kategori\n";
+cout << "K.Tampilkan data murid menurut kategori\n";
+cout << " .Tutup aplikasi\n";
+cout << endl;
+cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
   switch(pilihan){
-    case "A":
-    case "B":
+    case "A": 
+      break;
+    case "B": 
+      cout << "";
+      break; 
     case "C":
-    case "D":
-    case "E":
-    case "F":
+      cout << "ID Pegawai 	 : "; cin >> newElementPeg->id_Peg;
+      cout << "Nama Pegawai  : "; cin >> newElementPeg->nama_Peg;
+      cout << "Tanggal Lahir : "; cin >> newElementPeg->tgl_Lahir_Peg;
+      cout << "Jenis Kelamin : "; cin >> newElementPeg->JK_Peg;
+      cout << "Jabatan			 : "; cin >> newElementPeg->Jabatan;
+      cout << "Gaji					 : "; cin >> newElementPeg->Gaji;
+      cout << "-------------------------- \n";
+      cout << "Kembali ke Menu? (Y/N) \n"; cin >> yn;
+      if (yn == "Y" ||  yn == 'y'){
+      	goto menu;
+        	break;
+      } else if (yn == 'N' || yn == 'n'){
+        	break;
+      } else {
+        	cout << "Input salah \n";
+      } 
+      break;}
+          
+    case "D": 
+      cout << "ID Murid 		 : "; cin >> newElementMrd->id_Mrd;
+      cout << "Nama Murid	   : "; cin >> newElementMrd->nama_Mrd;
+      cout << "Tanggal Lahir : "; cin >> newElementMrd->tgl_Lahir_Mrd;
+      cout << "Jenis Kelamin : "; cin >> newElementMrd->JK_Mrd;
+      cout << "Alamat 			 : "; cin >> newElementMrd->Alamat;
+      cout << "Kelas				 : "; cin >> newElementMrd->Kelas;
+      cout << "Jurusan    	 : "; cin >> newElementMrd->Jurusan;
+      cout << "Nomor Telepon : "; cin >> newElementMrd->noTelp;
+      cout << "-------------------------- \n";
+      cout << "Kembali ke Menu? (Y/N) \n"; cin >> yn;
+      if (yn == "Y" ||  yn == 'y'){
+      	goto menu;
+        	break;
+      } else if (yn == 'N' || yn == 'n'){
+        	break;
+      } else {
+        	cout << "Input salah \n";
+      } 
+      break;}
+      break;
+    case "E": 
+      cout << "";
+      break;
+    case "F": 
+      cout << "";
+      break;
     case "G":
+      cout << "";
+      break;
     case "H":
+      cout << "";
+      break;
     case "I":
+      cout << "";
+      break;
+    case "J":
+      cout << "";
+			break;
+    case "": //Menutup aplikasi
+      break;	
   }
+}
+
+void createElementPeg(pointer& new_Element_Peg, string id_Peg, string nama_Peg, string tgl_Lahir_Peg, string JK_Peg, string jabatan, int gaji){
+	newElementPeg = new Node;
+  newElementPeg->id_Peg = id_Peg;
+  newElementPeg->nama_Peg = nama_Peg;
+  newElementPeg->tgl_Lahir_Peg = tgl_Lahir_Peg;
+  newElementPeg->JK_Peg = JK_Peg;
+  newElementPeg->Jabatan = jabatan;
+  newElementPeg->Gaji = gaji;
+  newElementPeg->nextPeg = nullptr;
+}
+
+void createElementMrd(pointer& new_Element_Mrd, string id_Mrd, string nama_Mrd, string tgl_Lahir_Mrd, string JK_Mrd, string alamat, string kelas, string jurusan, string noTelp){
+	newElementMrd = new Node;
+  newElementMrd->id_Mrd = id_Mrd;
+  newElementMrd->nama_Mrd = nama_Mrd;
+  newElementMrd->tgl_Lahir_Mrd = tgl_Lahir_Mrd;
+  newElementMrd->JK_Mrd = JK_Mrd;
+  newElementMrd->Alamat = alamat;
+  newElementMrd->Kelas = kelas;
+  newElementMrd->Jurusan = jurusan;
+  newElementMrd->noTelp = no_Telp;
+  newElementMrd->nextPeg = nullptr;
 }
 
 void traversalPeg(listPeg &head){
@@ -88,7 +170,7 @@ void traversalPeg(listPeg &head){
       }
       cout << "Jabatan					: " << pHelp->jabatan << endl;
       cout << "Gaji							: " << pHelp->gaji << endl;
-      pHelp = pHelp->next;
+      pHelp = pHelp->nextPeg;
     }
     cout << "------------------------------------------------------------------------------------\n";
   } 
@@ -113,8 +195,8 @@ void traversalMurid(listMurid &head){
       cout << "Alamat				    	: " << pHelp->alamat << endl;
       cout << "Kelas						  : " << pHelp->kelas << endl;
       cout << "Jurusan					  : " << pHelp->jurusan << endl;
-      cout << "No Telepon				  : " << pHelp->no_telp << endl;
-      pHelp = pHelp->next;
+      cout << "Nomor Telepon		  : " << pHelp->no_telp << endl;
+      pHelp = pHelp->nextMurid;
     }
     cout << "------------------------------------------------------------------------------------\n";
   } 
@@ -126,9 +208,9 @@ void addPeg(listPeg &head){
   } else{
   	nodePeg temp = head;
     while (temp-> != nullptr) {
-      temp = temp->next;
+      temp = temp->nextPeg;
     }
-    temp->next = pNew;
+    temp->nextPeg = pNew;
   }
 }
     
@@ -138,9 +220,9 @@ void addMurid(listMurid &head){
   } else {
     nodeMurid temp = head;
     while (temp-> != nullptr) {
-      temp = temp->next;
+      temp = temp->nextMurid;
     }
-    temp->next = pNew;
+    temp->nextMurid = pNew;
   }
 }
 
@@ -149,7 +231,7 @@ void searchMurid(listMurid &head, NodePtr &pSearch, char key){
   while (pSearch != nullptr) {
     if (pSearch->data == key)
       break;
-    pSearch = pSearch->next;
+    pSearch = pSearch->nextMurid;
   }
 }
 
@@ -158,11 +240,11 @@ void searchPeg(listPeg &head, NodePtr &pSearch, char key){
   while (pSearch != nullptr) {
     if (pSearch->data == key)
       break;
-    pSearch = pSearch->next;
+    pSearch = pSearch->nextPeg;
   }
 }
 
-void removePeg(){
+void removePeg(listPeg &head, NodePtr &pDelete, char key){
 	searchPeg(head, pDelete, key);
 	if (head == nullptr || pDelete == nullptr) {
   	cout << "Node yang dicari tidak ditemukan" << '\n';
@@ -204,14 +286,184 @@ void removeMurid(listMurid &head, NodePtr &pDelete, char key){
   }
 }
 
-void editPeg(){}
-    
+	int id;
+  string nama[50];
+  int tgl_lahir;
+  string bln_lahir;
+  int thn_lahir;
+  char jk;
+  string jabatan;
+  int gaji;
+  string alamat;
+  int kelas;
+  string jurusan;
+  string no_telp;
+  
+	
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->id == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> id;
+  pSearch -> id = temp -> id;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->nama == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> nama;
+  pSearch -> nama = temp -> nama;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->tgl_lahir == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> tgl_lahir;
+  pSearch -> tgl_lahir = temp -> tgl_lahir;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->bln_lahir == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> bln_lahir;
+  pSearch -> bln_lahir = temp -> bln_lahir;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->thn_lahir == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> thn_lahir;
+  pSearch -> thn_lahir = temp -> thn_lahir;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->jk == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> jk;
+  pSearch -> jk = temp -> jk;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->jabatan == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> jabatan;
+  pSearch -> jabatan = temp -> jabatan;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->gaji == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> gaji;
+  pSearch -> gaji = temp -> gaji;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->alamat == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> alamat;
+  pSearch -> alamat = temp -> alamat;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->kelas == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> kelas;
+  pSearch -> kelas = temp -> kelas;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->jurusan == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> jurusan;
+  pSearch -> jurusan = temp -> jurusan;
+}
+
+void editPeg(listPeg &head, NodePtr &pSearch, char key){
+  pSearch = head;
+  while (pSearch != nullptr) {
+    if (pSearch->no_telp == key)
+      break;
+    pSearch = pSearch->nextPeg;
+  }
+  nodePtr temp = nullptr;
+  cout "Masukkan update data: \n";
+  cin >> temp -> no_telp;
+  pSearch -> no_telp = temp -> no_telp;
+}
+
 void editMurid(){}
     
 
 //Implementasi Queue
 struct Node{
-	string data;
+  string id;
+	string nama;
+  string keterangan
   int priority;
   Node *next;
 };
@@ -228,15 +480,19 @@ void createQueue(Queue& Q){
   Q.Tail = nullptr;
 }
       
-void createElement(pointer& newElement, int data, int priority){
+void createElement(pointer& newElement, string id, string nama, string keterangan, int priority){
 	newElement = new Node;
-  newElement->data = data;
+  newElement->id = id;
+  newElement->nama = nama;
+  newElement->keterangan = keterangan;
   newElement->priority;
   newElement->next = nullptr;
 }
  
 void front(Queue Q){
-	cout << Q.Head->data;
+	cout << Q.Head->id;
+  cout << Q.Head->nama;
+  cout << Q.Head->keterangan;
 }
       
 bool isEmpty(Queue Q){
@@ -298,6 +554,7 @@ void stackImplementation(){}
 int main(){
   listPeg dataPeg = nullptr;
   listMurid dataMurid = nullptr;
+  menu:
   mainMenu(dataPeg, dataMurid);
 	return 0;
 }
