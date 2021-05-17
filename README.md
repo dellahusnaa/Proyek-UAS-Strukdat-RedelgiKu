@@ -64,6 +64,7 @@ Tools yang kami gunakan dalam pengerjaan aplikasi/proyek ini yaitu :
 - Google Docs, 
 - Visual Studio Code, dan 
 - CMD. 
+- Codeshare.io
 
 Kami menggunakan media WhatsApp dan Discord untuk berdiskusi. Pembagian kerja pada kelompok kami diutamakan dengan cara pembagian tugas per fungsi. 
 
