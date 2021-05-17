@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
 using namespace std;
 
 struct pegawai{
   int id;
-  string nama[50];
+  string nama;
   int tgl_lahir;
   string bln_lahir;
   int thn_lahir;
@@ -28,7 +29,6 @@ struct murid{
   string alamat;
   int kelas;
   string jurusan;
-  string no_telp;
   murid *next;
   murid *prev;
 };
@@ -36,126 +36,32 @@ struct murid{
 typedef murid *nodeMurid;
 typedef nodeMurid listMurid;
 
-void mainMenu(listPeg &head, listMurid &head){
-  char pilihan;
-  cout << "+---------------------------------------+" << endl;
-  cout << "|              RedelgiKu                |" << endl;
-  cout << "+---------------------------------------+" << endl;
-  cout << "| Aplikasi Pengatur Data Bimbel Redelgi |" << endl;
-  cout << "+---------------------------------------+" << endl;
-  cout << endl;
-  cout << "Pilihan: \n";
-  cout << "A.Tampilkan data pegawai\n";
-  cout << "B.Tampilkan data murid\n";
-  cout << "C.Tambah data pegawai\n";
-  cout << "D.Tambah data murid\n";
-  cout << "E.Hapus data pegawai\n";
-  cout << "F.Hapus data murid\n";
-  cout << "G.Edit data pegawai\n";
-  cout << "H.Edit data murid\n";
-  cout << "I.Layanan Konsultasi\n";
-  cout << "J.Tampilkan data pegawai menurut kategori\n";
-  cout << "K.Tampilkan data murid menurut kategori\n";
-  cout << " .Tutup aplikasi\n";
-  cout << endl;
-  cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
-  switch(pilihan){
-    case "A": 
-      break;
-    case "B": 
-      cout << "";
-      break; 
-    case "C":
-      cout << "+---------------------------------------+" << endl;
-  		cout << "|       I N P U T    P E G A W A I      |" << endl;
-  		cout << "+---------------------------------------+" << endl;
-      cout << "ID Pegawai 	 : "; cin >> newElementPeg->id_Peg;
-      cout << "Nama Pegawai  : "; cin >> newElementPeg->nama_Peg;
-      cout << "Tanggal Lahir : "; cin >> newElementPeg->tgl_Lahir_Peg;
-      cout << "Jenis Kelamin : "; cin >> newElementPeg->JK_Peg;
-      cout << "Jabatan			 : "; cin >> newElementPeg->Jabatan;
-      cout << "Gaji					 : "; cin >> newElementPeg->Gaji;
-      cout << "----------------------------------------- \n";
-      cout << "Kembali ke Menu? (Y/N) \n"; cin >> yn;
-      if (yn == "Y" ||  yn == 'y'){
-      	goto menu;
-        	break;
-      } else if (yn == 'N' || yn == 'n'){
-        	break;
-      } else {
-        	cout << "Input salah \n";
-      } 
-      break;}
-          
-    case "D": 
-      cout << "+---------------------------------------+" << endl;
-  		cout << "|        I N P U T    M U R I D         |" << endl;
-  		cout << "+---------------------------------------+" << endl;
-      cout << "ID Murid 		 : "; cin >> newElementMrd->id_Mrd;
-      cout << "Nama Murid	   : "; cin >> newElementMrd->nama_Mrd;
-      cout << "Tanggal Lahir : "; cin >> newElementMrd->tgl_Lahir_Mrd;
-      cout << "Jenis Kelamin : "; cin >> newElementMrd->JK_Mrd;
-      cout << "Alamat 			 : "; cin >> newElementMrd->Alamat;
-      cout << "Kelas				 : "; cin >> newElementMrd->Kelas;
-      cout << "Jurusan    	 : "; cin >> newElementMrd->Jurusan;
-      cout << "Nomor Telepon : "; cin >> newElementMrd->noTelp;
-      cout << "-------------------------- \n";
-      cout << "Kembali ke Menu? (Y/N) \n"; cin >> yn;
-      if (yn == "Y" ||  yn == 'y'){
-      	goto menu;
-        	break;
-      } else if (yn == 'N' || yn == 'n'){
-        	break;
-      } else {
-        	cout << "Input salah \n";
-      } 
-      break;}
-      break;
-    case "E": 
-      cout << "";
-      break;
-    case "F": 
-      cout << "";
-      break;
-    case "G":
-      cout << "";
-      break;
-    case "H":
-      cout << "";
-      break;
-    case "I":
-      cout << "";
-      break;
-    case "J":
-      cout << "";
-			break;
-    case "": //Menutup aplikasi
-      break;	
-  }
+void createElementPeg(nodePeg &pNew, int id, string nama, int tgl_lahir, string bln_lahir, int thn_lahir, char jk, string jabatan, int gaji){
+	pNew = new pegawai;
+  pNew->id = id;
+  pNew->nama = nama;
+  pNew->tgl_lahir = tgl_lahir;
+  pNew->bln_lahir = bln_lahir;
+  pNew->thn_lahir = thn_lahir;
+  pNew->jk = jk;
+  pNew->jabatan = jabatan;
+  pNew->gaji = gaji;
+  pNew->next = nullptr;
+  pNew->prev = nullptr;
 }
 
-void createElementPeg(pointer& new_Element_Peg, string id_Peg, string nama_Peg, string tgl_Lahir_Peg, string JK_Peg, string jabatan, int gaji){
-	newElementPeg = new Node;
-  newElementPeg->id_Peg = id_Peg;
-  newElementPeg->nama_Peg = nama_Peg;
-  newElementPeg->tgl_Lahir_Peg = tgl_Lahir_Peg;
-  newElementPeg->JK_Peg = JK_Peg;
-  newElementPeg->Jabatan = jabatan;
-  newElementPeg->Gaji = gaji;
-  newElementPeg->nextPeg = nullptr;
-}
-
-void createElementMrd(pointer& new_Element_Mrd, string id_Mrd, string nama_Mrd, string tgl_Lahir_Mrd, string JK_Mrd, string alamat, string kelas, string jurusan, string noTelp){
-	newElementMrd = new Node;
-  newElementMrd->id_Mrd = id_Mrd;
-  newElementMrd->nama_Mrd = nama_Mrd;
-  newElementMrd->tgl_Lahir_Mrd = tgl_Lahir_Mrd;
-  newElementMrd->JK_Mrd = JK_Mrd;
-  newElementMrd->Alamat = alamat;
-  newElementMrd->Kelas = kelas;
-  newElementMrd->Jurusan = jurusan;
-  newElementMrd->noTelp = no_Telp;
-  newElementMrd->nextPeg = nullptr;
+void createElementMurid(nodeMurid &pNew, int id, string nama, int tgl_lahir, string bln_lahir, int thn_lahir, char jk, string alamat, int kelas, string jurusan){
+	pNew = new murid;
+  pNew->id = id;
+  pNew->nama = nama;
+  pNew->tgl_lahir = tgl_lahir;
+  pNew->bln_lahir = bln_lahir;
+  pNew->thn_lahir = thn_lahir;
+  pNew->jk = jk;
+  pNew->alamat = alamat;
+  pNew->kelas = kelas;
+  pNew->next = nullptr;
+  pNew->prev = nullptr;
 }
 
 void traversalPeg(listPeg &head){
@@ -176,7 +82,7 @@ void traversalPeg(listPeg &head){
       }
       cout << "Jabatan					: " << pHelp->jabatan << endl;
       cout << "Gaji							: " << pHelp->gaji << endl;
-      pHelp = pHelp->nextPeg;
+      pHelp = pHelp->next;
     }
     cout << "------------------------------------------------------------------------------------\n";
   } 
@@ -201,97 +107,98 @@ void traversalMurid(listMurid &head){
       cout << "Alamat				    	: " << pHelp->alamat << endl;
       cout << "Kelas						  : " << pHelp->kelas << endl;
       cout << "Jurusan					  : " << pHelp->jurusan << endl;
-      cout << "Nomor Telepon		  : " << pHelp->no_telp << endl;
-      pHelp = pHelp->nextMurid;
+      pHelp = pHelp->next;
     }
     cout << "------------------------------------------------------------------------------------\n";
   } 
 }
     
-void addPeg(listPeg &head){
-	if (head = nullptr){
+void addPeg(listPeg &head, nodePeg pNew){
+	if (head == nullptr){
     head = pNew;
   } else{
   	nodePeg temp = head;
-    while (temp-> != nullptr) {
-      temp = temp->nextPeg;
+    while (temp->next != nullptr) {
+      temp = temp->next;
     }
-    temp->nextPeg = pNew;
+    temp->next = pNew;
+    pNew->prev = temp;
   }
 }
     
-void addMurid(listMurid &head){
+void addMurid(listMurid &head, nodeMurid pNew){
 	if (head == nullptr) {
   	head = pNew;
   } else {
     nodeMurid temp = head;
-    while (temp-> != nullptr) {
-      temp = temp->nextMurid;
+    while (temp->next != nullptr) {
+      temp = temp->next;
     }
-    temp->nextMurid = pNew;
+    temp->next = pNew;
+    pNew->prev = temp;
   }
 }
 
-void searchMurid(listMurid &head, NodePtr &pSearch, char key){
+void searchMurid(listMurid &head, nodeMurid &pSearch, int key){
   pSearch = head;
   while (pSearch != nullptr) {
-    if (pSearch->data == key)
+    if (pSearch->id == key)
       break;
-    pSearch = pSearch->nextMurid;
+    pSearch = pSearch->next;
   }
 }
 
-void searchPeg(listPeg &head, NodePtr &pSearch, char key){
+void searchPeg(listPeg &head, nodePeg &pSearch, int key){
   pSearch = head;
   while (pSearch != nullptr) {
-    if (pSearch->data == key)
+    if (pSearch->id == key)
       break;
-    pSearch = pSearch->nextPeg;
+    pSearch = pSearch->next;
   }
 }
 
-void removePeg(listPeg &head, NodePtr &pDelete, char key){
+void removePeg(listPeg &head, nodePeg &pDelete, int key){
 	searchPeg(head, pDelete, key);
 	if (head == nullptr || pDelete == nullptr) {
   	cout << "Node yang dicari tidak ditemukan" << '\n';
   } else {
     if (pDelete == head) {
-      head = head->nextPeg;
-      pDelete->nextPeg = nullptr;
-    } else if (pDelete->nextPeg = nullptr) {
-      pDelete->prevPeg->nextPeg = nullptr;
-      pDelete->prevPeg = nullptr;
+      head = head->next;
+      pDelete->next = nullptr;
+    } else if (pDelete->next = nullptr) {
+      pDelete->prev->next = nullptr;
+      pDelete->prev = nullptr;
     } else {
-      pDelete->prevPeg->nextPeg = pDelete->nextPeg;
-      pDelete->nextPeg->prevPeg = pDelete->prevPeg;
-      pDelete->nextPeg = nullptr;
-      pDelete->prevPeg = nullptr;
+      pDelete->prev->next = pDelete->next;
+      pDelete->next->prev = pDelete->prev;
+      pDelete->next = nullptr;
+      pDelete->prev = nullptr;
     }
     delete pDelete;
   }
 }
                  
-void removeMurid(listMurid &head, NodePtr &pDelete, char key){
+void removeMurid(listMurid &head, nodeMurid &pDelete, int key){
 	searchMurid(head, pDelete, key);
 	if (head == nullptr || pDelete == nullptr) {
   	cout << "Node yang dicari tidak ditemukan" << '\n';
   } else {
     if (pDelete == head) {
-      head = head->nextMurid;
-      pDelete->nextMurid = nullptr;
-    } else if (pDelete->nextMurid = nullptr) {
-      pDelete->prevMurid->nextMurid = nullptr;
-      pDelete->prevMurid = nullptr;
+      head = head->next;
+      pDelete->next = nullptr;
+    } else if (pDelete->next = nullptr) {
+      pDelete->prev->next = nullptr;
+      pDelete->prev = nullptr;
     } else {
-      pDelete->prevMurid->nextMurid = pDelete->nextMurid;
-      pDelete->nextMurid->prevMurid = pDelete->prevMurid;
-      pDelete->nextMurid = nullptr;
-      pDelete->prevMurid = nullptr;
+      pDelete->prev->next = pDelete->next;
+      pDelete->next->prev = pDelete->prev;
+      pDelete->next = nullptr;
+      pDelete->prev = nullptr;
     }
     delete pDelete;
   }
 }
-
+/*
 void editPeg(listPeg &head, NodePtr &pSearch, char key){
   int pilihan;
   
@@ -561,12 +468,12 @@ void editMurid(listPeg &head, NodePtr &pSearch, char key){
     break;
   }
 }    
-
+*/
 //Implementasi Queue
 struct Node{
   string id;
 	string nama;
-  string keterangan
+  string keterangan;
   int priority;
   Node *next;
 };
@@ -620,7 +527,7 @@ void enqueue(Queue& Q, pointer newElement){
       pHelp = pHelp->next;
     }
     //Insert First
-    if(pHelp == Q.Head && newElement->priority < pHelp>priority){
+    if(pHelp == Q.Head && newElement->priority < pHelp->priority){
     	newElement->next = pHelp;
       Q.Head = newElement;
     }
@@ -632,7 +539,7 @@ void enqueue(Queue& Q, pointer newElement){
     //Insert Middle
     else{
     	pRev->next = newElement;
-      newElement->next = pHelp
+      newElement->next = pHelp;
     }
   } 
 }
@@ -652,12 +559,250 @@ void dequeue(Queue& Q, pointer delElement){
 }
 
 //Implementasi Stack
-void stackImplementation(){}
+void stackImplementation(){
+	
+}
     
 int main(){
   listPeg dataPeg = nullptr;
   listMurid dataMurid = nullptr;
+  pointer newElement, pDel;
+  createQueue(Q);
   menu:
-  mainMenu(dataPeg, dataMurid);
+  char pilihan;
+  nodePeg pSearchPeg, pDeletePeg, pNewPeg;
+  nodeMurid pSearchMurid, pDeleteMurid, pNewMurid;
+  char pil;
+  cout << "+---------------------------------------+" << endl;
+  cout << "|              RedelgiKu                |" << endl;
+  cout << "+---------------------------------------+" << endl;
+  cout << "| Aplikasi Pengatur Data Bimbel Redelgi |" << endl;
+  cout << "+---------------------------------------+" << endl;
+  cout << endl;
+  cout << "Pilihan: \n";
+  cout << "A.Tampilkan data pegawai\n";
+  cout << "B.Tampilkan data murid\n";
+  cout << "C.Tambah data pegawai\n";
+  cout << "D.Tambah data murid\n";
+  cout << "E.Hapus data pegawai\n";
+  cout << "F.Hapus data murid\n";
+  cout << "G.Layanan Konsultasi\n";
+  cout << "H.Tutup aplikasi\n";
+  cout << endl;
+  cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
+  switch(pilihan){
+    case 'A': //Menampilkan data pegawai
+      system("cls");
+      char pil;
+      cout << "+-----------------------------+\n";
+      cout << "|   D A T A   P E G A W A I   |\n";
+      cout << "+-----------------------------+\n";
+      cout << endl;
+      traversalPeg(dataPeg);
+      cout << "Jika ingin ke menu utama, ketik huruf 'Y' dan tekan enter!\n";
+      cin >> pil;
+      if(pil == 'Y' | pil == 'y'){
+      	system("cls");
+        goto menu;
+      } 
+      break;
+    case 'B': //Menampilkan data murid
+      system("cls");
+      cout << "+-------------------------+\n";
+      cout << "|   D A T A   M U R I D   |\n";
+      cout << "+-------------------------+\n";
+      cout << endl;
+      traversalMurid(dataMurid);
+      cout << "Jika ingin ke menu utama, ketik huruf 'Y' dan tekan enter!\n";
+      cin >> pil;
+      if(pil == 'Y' | pil == 'y'){
+      	system("cls");
+        goto menu;
+      } 
+      break; 
+    case 'C':{ //Case Input Pegawai
+      system("cls");
+      int id_peg;
+      string nama_peg;
+      int tgl_lahir_peg;
+      string bln_lahir_peg;
+      int thn_lahir_peg;
+      char jk_peg;
+      string jabatan_peg;
+      int gaji_peg;
+      cout << "+---------------------------------------+" << endl;
+  		cout << "|       I N P U T    P E G A W A I      |" << endl;
+  		cout << "+---------------------------------------+" << endl;
+      cout << "ID Pegawai 	 : "; cin >> id_peg;
+      cout << "Nama Pegawai  : "; cin >> nama_peg;
+      cout << "Tanggal Lahir : "; cin >> tgl_lahir_peg;
+      cout << "Bulan Lahir	 : "; cin >> bln_lahir_peg;
+      cout << "Tahun Lahir	 : "; cin >> thn_lahir_peg;
+      cout << "Jenis Kelamin : "; cin >> jk_peg;
+      cout << "Jabatan			 : "; cin >> jabatan_peg;
+      cout << "Gaji					 : "; cin >> gaji_peg;
+      cout << "----------------------------------------- \n";
+      createElementPeg(pNewPeg, id_peg, nama_peg, tgl_lahir_peg, bln_lahir_peg, thn_lahir_peg, jk_peg, jabatan_peg, gaji_peg);
+      addPeg(dataPeg, pNewPeg);
+      cout << "Data berhasil diinput!\n";
+      cout << "Untuk ke menu utama, ketik 'Y' dan tekan enter\n"; cin >> pil;
+      if(pil == 'Y' ||  pil == 'y'){
+        system("cls");
+      	goto menu;
+      }
+      }break;
+          
+    case 'D':{ // Case Input Murid
+  		system("cls");
+      int id_murid;
+      string nama_murid;
+      int tgl_lahir_murid;
+      string bln_lahir_murid;
+      int thn_lahir_murid;
+      char jk_murid;
+      string alamat_murid;
+      int kelas_murid;
+      string jurusan_murid;
+      cout << "+---------------------------------------+" << endl;
+  		cout << "|        I N P U T    M U R I D         |" << endl;
+  		cout << "+---------------------------------------+" << endl;
+      cout << "ID Murid 		 : "; cin >> id_murid;
+      cout << "Nama Murid	   : "; cin >> nama_murid;
+      cout << "Tanggal Lahir : "; cin >> tgl_lahir_murid;
+      cout << "Bulan Lahir	 : "; cin >> bln_lahir_murid;
+      cout << "Tahun Lahir	 : "; cin >> thn_lahir_murid;
+      cout << "Jenis Kelamin : "; cin >> jk_murid;
+      cout << "Alamat 			 : "; cin >> alamat_murid;
+      cout << "Kelas				 : "; cin >> kelas_murid;
+      cout << "Jurusan    	 : "; cin >> jurusan_murid;
+      cout << "-------------------------- \n";
+      createElementMurid(pNewMurid, id_murid, nama_murid, tgl_lahir_murid, bln_lahir_murid, thn_lahir_murid, jk_murid, alamat_murid, kelas_murid, jurusan_murid);
+      addMurid(dataMurid, pNewMurid);
+      cout << "Data berhasil diinputkan!\n";
+      cout << "Untuk ke menu utama, ketik 'Y' dan tekan enter\n"; cin >> pil;
+      if(pil == 'Y' ||  pil == 'y'){
+        system("cls");
+      	goto menu;
+      }
+      }break;
+    case 'E':{ //Case Hapus Salahsatu Data Pegawai
+      system("cls");
+      int id_peg_hapus;
+      cout << "+-----------------------------------------+\n";
+      cout << "|   H A P U S   D A T A   P E G A W A I   |\n";
+      cout << "+-----------------------------------------+\n";
+      cout << endl;
+      cout << "Masukkan ID data yang ingin dihapus!\n";
+      cout << "ID : "; cin >> id_peg_hapus;
+			removePeg(dataPeg, pDeletePeg, id_peg_hapus);
+      cout << "Data berhasil dihapus!\n";
+      cout << "Untuk ke menu utama, ketik 'Y' dan tekan enter\n"; cin >> pil;
+      if(pil == 'Y' ||  pil == 'y'){
+        system("cls");
+      	goto menu;
+      }
+      }break;
+    case 'F':{
+      system("cls");
+      int id_murid_hapus;
+      cout << "+-------------------------------------+\n";
+      cout << "|   H A P U S   D A T A   M U R I D   |\n";
+      cout << "+-------------------------------------+\n";
+      cout << endl;
+      cout << "Masukkan ID data yang ingin dihapus!\n";
+      cout << "ID : "; cin >> id_murid_hapus;
+			removeMurid(dataMurid, pDeleteMurid, id_murid_hapus);
+      cout << "Data berhasil dihapus!\n";
+      cout << "Untuk ke menu utama, ketik 'Y' dan tekan enter\n"; cin >> pil;
+      if(pil == 'Y' ||  pil == 'y'){
+        system("cls");
+      	goto menu;
+      }
+      }break;
+    case 'G':{
+			konsul:
+			system("cls");
+			int pilihan;
+			cout << "+------------------------+\n";
+			cout << "|   Layanan Konsultasi   |\n";
+			cout << "+------------------------+\n";
+			cout << endl;
+			cout << "Pilihan: \n";
+			cout << "1.Tambah murid untuk konsultasi\n";
+			cout << "2.Giliran murid untuk konsultasi saat ini\n";
+			cout << "3.Ganti giliran konsultasi\n";
+			cout << endl << "Masukkan pilihan (dengan angka): "; cin >> pilihan;
+			cout << endl;
+			switch(pilihan){
+        case 1:{
+          system("cls");
+      		cout << "+------------------------+\n";
+					cout << "|   Layanan Konsultasi   |\n";
+					cout << "+------------------------+\n";
+          cout << endl;
+          pointer newElement;
+          string id, nama, keterangan;
+          int nilai;
+          cout << "Masukkan informasi! \n";
+          cout << "ID					: "; cin >> id;
+          cout << "Nama				: "; cin >> nama;
+          cout << "Keterangan	: "; cin >> keterangan;
+          createElement(newElement, id, nama, keterangan, nilai);
+          enqueue(Q, newElement);
+          cout << endl << "Data berhasil ditambahkan!\n";
+          cout << endl << "Kembali ke menu layanan konsultasi? (Y/N)\n";
+          cin >> pil;
+          if(pil == 'Y' || pil == 'y'){
+          	system("cls");
+            goto konsul;
+          } else{
+            system("cls");
+          	goto menu;
+          }
+          }break;
+        case 2:{
+          system("cls");
+      		cout << "+------------------------+\n";
+					cout << "|   Layanan Konsultasi   |\n";
+					cout << "+------------------------+\n";
+          cout << endl;
+          cout << "Giliran saat ini:\n";
+        	front(Q);
+          cout << endl << "Kembali ke menu layanan konsultasi? (Y/N)\n";
+          cin >> pil;
+          if(pil == 'Y' || pil == 'y'){
+          	system("cls");
+            goto konsul;
+          } else{
+            system("cls");
+          	goto menu;
+          }
+        }break;
+        case 3:{
+          system("cls");
+      		cout << "+------------------------+\n";
+					cout << "|   Layanan Konsultasi   |\n";
+					cout << "+------------------------+\n";
+          cout << endl;
+          dequeue(Q, pDel);
+          cout << "Ganti giliran berhasil!\n";
+          cout << endl << "Kembali ke menu layanan konsultasi? (Y/N)\n";
+          cin >> pil;
+          if(pil == 'Y' || pil == 'y'){
+          	system("cls");
+            goto konsul;
+          } else{
+            system("cls");
+          	goto menu;
+          }
+          }break;
+      }
+      }break;
+    case 'H':{
+      system("cls");
+      goto exit;
+      }break;
+  }
+  exit:
 	return 0;
 }
