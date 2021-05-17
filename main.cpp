@@ -4,50 +4,50 @@
 using namespace std;
 
 struct pegawai{
-  int id;
-  string nama;
-  int tgl_lahir;
-  string bln_lahir;
-  int thn_lahir;
-  char jk;
-  string jabatan;
-  int gaji;
-	pegawai *next;
-  pegawai *prev;
+    int id;
+    string nama;
+    int tgl_lahir;
+    string bln_lahir;
+    int thn_lahir;
+    char jk;
+    string jabatan;
+    int gaji;
+    pegawai *next;
+    pegawai *prev;
 };
 
 typedef pegawai *nodePeg;
 typedef nodePeg listPeg;
     
 struct murid{
-	int id;
-  string nama;
-  int tgl_lahir;
-  string bln_lahir;
-  int thn_lahir;
-  char jk;
-  string alamat;
-  int kelas;
-  string jurusan;
-  murid *next;
-  murid *prev;
+    int id;
+    string nama;
+    int tgl_lahir;
+    string bln_lahir;
+    int thn_lahir;
+    char jk;
+    string alamat;
+    int kelas;
+    string jurusan;
+    murid *next;
+    murid *prev;
 };
 
 typedef murid *nodeMurid;
 typedef nodeMurid listMurid;
 
 void createElementPeg(nodePeg &pNew, int id, string nama, int tgl_lahir, string bln_lahir, int thn_lahir, char jk, string jabatan, int gaji){
-	pNew = new pegawai;
-  pNew->id = id;
-  pNew->nama = nama;
-  pNew->tgl_lahir = tgl_lahir;
-  pNew->bln_lahir = bln_lahir;
-  pNew->thn_lahir = thn_lahir;
-  pNew->jk = jk;
-  pNew->jabatan = jabatan;
-  pNew->gaji = gaji;
-  pNew->next = nullptr;
-  pNew->prev = nullptr;
+    pNew = new pegawai;
+    pNew->id = id;
+    pNew->nama = nama;
+    pNew->tgl_lahir = tgl_lahir;
+    pNew->bln_lahir = bln_lahir;
+    pNew->thn_lahir = thn_lahir;
+    pNew->jk = jk;
+    pNew->jabatan = jabatan;
+    pNew->gaji = gaji;
+    pNew->next = nullptr;
+    pNew->prev = nullptr;
 }
 
 void createElementMurid(nodeMurid &pNew, int id, string nama, int tgl_lahir, string bln_lahir, int thn_lahir, char jk, string alamat, int kelas, string jurusan){
@@ -70,9 +70,9 @@ void traversalPeg(listPeg &head){
   } else{
   	nodePeg pHelp = head;
     while(pHelp != nullptr){
-    	cout << "ID Pegawai				: " << pHelp->id << endl;
-      cout << "Nama	Pegawai			: " << pHelp->nama << endl;
-      cout << "Tanggal Lahir		: " << pHelp->tgl_lahir << "/" << pHelp->bln_lahir << "/" << pHelp->thn_lahir << endl;
+    	cout << "ID Pegawai	: " << pHelp->id << endl;
+      	cout << "Nama Pegawai	: " << pHelp->nama << endl;
+      	cout << "Tanggal Lahir	: " << pHelp->tgl_lahir << "/" << pHelp->bln_lahir << "/" << pHelp->thn_lahir << endl;
       if(pHelp->jk == 'L' || pHelp->jk == 'l'){
         cout << "Jenis Kelamin	: Laki-laki\n";
       } else if(pHelp->jk == 'P' || pHelp->jk == 'p'){
@@ -80,8 +80,8 @@ void traversalPeg(listPeg &head){
       } else{
       	cout << "Jenis Kelamin	: Tidak diketahui\n";
       }
-      cout << "Jabatan					: " << pHelp->jabatan << endl;
-      cout << "Gaji							: " << pHelp->gaji << endl;
+      cout <<   "Jabatan	: " << pHelp->jabatan << endl;
+      cout <<   "Gaji		: " << pHelp->gaji << endl;
       pHelp = pHelp->next;
     }
     cout << "------------------------------------------------------------------------------------\n";
@@ -94,19 +94,19 @@ void traversalMurid(listMurid &head){
   } else{
   	nodeMurid pHelp = head;
     while(pHelp != nullptr){
-    	cout << "ID Murid 				: " << pHelp->id << endl;
-      cout << "Nama	Murid			  : " << pHelp->nama << endl;
-      cout << "Tanggal Lahir		: " << pHelp->tgl_lahir << "/" << pHelp->bln_lahir << "/" << pHelp->thn_lahir << endl;
+    	cout << "ID Murid 	: " << pHelp->id << endl;
+      	cout << "Nama Murid	: " << pHelp->nama << endl;
+      	cout << "Tanggal Lahir	: " << pHelp->tgl_lahir << "/" << pHelp->bln_lahir << "/" << pHelp->thn_lahir << endl;
       if(pHelp->jk == 'L' || pHelp->jk == 'l'){
-        cout << "Jenis Kelamin		: Laki-laki\n";
+        cout << "Jenis Kelamin	: Laki-laki\n";
       } else if(pHelp->jk == 'P' || pHelp->jk == 'p'){
-        cout << "Jenis Kelamin		: Perempuan\n";
+        cout << "Jenis Kelamin	: Perempuan\n";
       } else{
-      	cout << "Jenis Kelamin		: Tidak diketahui\n";
+      	cout << "Jenis Kelamin	: Tidak diketahui\n";
       }
-      cout << "Alamat				    	: " << pHelp->alamat << endl;
-      cout << "Kelas						  : " << pHelp->kelas << endl;
-      cout << "Jurusan					  : " << pHelp->jurusan << endl;
+      cout <<   "Alamat	    	: " << pHelp->alamat << endl;
+      cout <<   "Kelas		: " << pHelp->kelas << endl;
+      cout <<   "Jurusan	: " << pHelp->jurusan << endl;
       pHelp = pHelp->next;
     }
     cout << "------------------------------------------------------------------------------------\n";
@@ -591,6 +591,7 @@ int main(){
   cout << endl;
   cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
   switch(pilihan){
+    case 'a':
     case 'A': //Menampilkan data pegawai
       system("cls");
       char pil;
@@ -606,6 +607,8 @@ int main(){
         goto menu;
       } 
       break;
+      
+    case 'b':
     case 'B': //Menampilkan data murid
       system("cls");
       cout << "+-------------------------+\n";
@@ -620,6 +623,8 @@ int main(){
         goto menu;
       } 
       break; 
+      
+    case 'c':  
     case 'C':{ //Case Input Pegawai
       system("cls");
       int id_peg;
@@ -633,14 +638,14 @@ int main(){
       cout << "+---------------------------------------+" << endl;
   		cout << "|       I N P U T    P E G A W A I      |" << endl;
   		cout << "+---------------------------------------+" << endl;
-      cout << "ID Pegawai 	 : "; cin >> id_peg;
-      cout << "Nama Pegawai  : "; cin >> nama_peg;
-      cout << "Tanggal Lahir : "; cin >> tgl_lahir_peg;
-      cout << "Bulan Lahir	 : "; cin >> bln_lahir_peg;
-      cout << "Tahun Lahir	 : "; cin >> thn_lahir_peg;
-      cout << "Jenis Kelamin : "; cin >> jk_peg;
-      cout << "Jabatan			 : "; cin >> jabatan_peg;
-      cout << "Gaji					 : "; cin >> gaji_peg;
+      cout << "ID Pegawai 	: "; cin >> id_peg;
+      cout << "Nama Pegawai  	: "; cin >> nama_peg;
+      cout << "Tanggal Lahir 	: "; cin >> tgl_lahir_peg;
+      cout << "Bulan Lahir	: "; cin >> bln_lahir_peg;
+      cout << "Tahun Lahir	: "; cin >> thn_lahir_peg;
+      cout << "Jenis Kelamin 	: "; cin >> jk_peg;
+      cout << "Jabatan		: "; cin >> jabatan_peg;
+      cout << "Gaji		: "; cin >> gaji_peg;
       cout << "----------------------------------------- \n";
       createElementPeg(pNewPeg, id_peg, nama_peg, tgl_lahir_peg, bln_lahir_peg, thn_lahir_peg, jk_peg, jabatan_peg, gaji_peg);
       addPeg(dataPeg, pNewPeg);
@@ -651,7 +656,8 @@ int main(){
       	goto menu;
       }
       }break;
-          
+    
+    case 'd':
     case 'D':{ // Case Input Murid
   		system("cls");
       int id_murid;
@@ -666,15 +672,15 @@ int main(){
       cout << "+---------------------------------------+" << endl;
   		cout << "|        I N P U T    M U R I D         |" << endl;
   		cout << "+---------------------------------------+" << endl;
-      cout << "ID Murid 		 : "; cin >> id_murid;
-      cout << "Nama Murid	   : "; cin >> nama_murid;
-      cout << "Tanggal Lahir : "; cin >> tgl_lahir_murid;
-      cout << "Bulan Lahir	 : "; cin >> bln_lahir_murid;
-      cout << "Tahun Lahir	 : "; cin >> thn_lahir_murid;
-      cout << "Jenis Kelamin : "; cin >> jk_murid;
-      cout << "Alamat 			 : "; cin >> alamat_murid;
-      cout << "Kelas				 : "; cin >> kelas_murid;
-      cout << "Jurusan    	 : "; cin >> jurusan_murid;
+      cout << "ID Murid 	: "; cin >> id_murid;
+      cout << "Nama Murid	: "; cin >> nama_murid;
+      cout << "Tanggal Lahir 	: "; cin >> tgl_lahir_murid;
+      cout << "Bulan Lahir	: "; cin >> bln_lahir_murid;
+      cout << "Tahun Lahir	: "; cin >> thn_lahir_murid;
+      cout << "Jenis Kelamin 	: "; cin >> jk_murid;
+      cout << "Alamat 		: "; cin >> alamat_murid;
+      cout << "Kelas		: "; cin >> kelas_murid;
+      cout << "Jurusan    	: "; cin >> jurusan_murid;
       cout << "-------------------------- \n";
       createElementMurid(pNewMurid, id_murid, nama_murid, tgl_lahir_murid, bln_lahir_murid, thn_lahir_murid, jk_murid, alamat_murid, kelas_murid, jurusan_murid);
       addMurid(dataMurid, pNewMurid);
@@ -685,6 +691,8 @@ int main(){
       	goto menu;
       }
       }break;
+      
+    case 'e':
     case 'E':{ //Case Hapus Salahsatu Data Pegawai
       system("cls");
       int id_peg_hapus;
@@ -702,6 +710,8 @@ int main(){
       	goto menu;
       }
       }break;
+      
+    case 'f':
     case 'F':{
       system("cls");
       int id_murid_hapus;
@@ -719,6 +729,8 @@ int main(){
       	goto menu;
       }
       }break;
+      
+    case 'g':
     case 'G':{
 			konsul:
 			system("cls");
@@ -737,15 +749,15 @@ int main(){
         case 1:{
           system("cls");
       		cout << "+------------------------+\n";
-					cout << "|   Layanan Konsultasi   |\n";
-					cout << "+------------------------+\n";
+		cout << "|   Layanan Konsultasi   |\n";
+		cout << "+------------------------+\n";
           cout << endl;
           pointer newElement;
           string id, nama, keterangan;
           int nilai;
           cout << "Masukkan informasi! \n";
-          cout << "ID					: "; cin >> id;
-          cout << "Nama				: "; cin >> nama;
+          cout << "ID		: "; cin >> id;
+          cout << "Nama		: "; cin >> nama;
           cout << "Keterangan	: "; cin >> keterangan;
           createElement(newElement, id, nama, keterangan, nilai);
           enqueue(Q, newElement);
@@ -763,8 +775,8 @@ int main(){
         case 2:{
           system("cls");
       		cout << "+------------------------+\n";
-					cout << "|   Layanan Konsultasi   |\n";
-					cout << "+------------------------+\n";
+		cout << "|   Layanan Konsultasi   |\n";
+		cout << "+------------------------+\n";
           cout << endl;
           cout << "Giliran saat ini:\n";
         	front(Q);
@@ -781,8 +793,8 @@ int main(){
         case 3:{
           system("cls");
       		cout << "+------------------------+\n";
-					cout << "|   Layanan Konsultasi   |\n";
-					cout << "+------------------------+\n";
+		cout << "|   Layanan Konsultasi   |\n";
+		cout << "+------------------------+\n";
           cout << endl;
           dequeue(Q, pDel);
           cout << "Ganti giliran berhasil!\n";
@@ -798,6 +810,8 @@ int main(){
           }break;
       }
       }break;
+      
+    case 'h':
     case 'H':{
       system("cls");
       goto exit;
