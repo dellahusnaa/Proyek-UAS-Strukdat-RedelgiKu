@@ -711,7 +711,6 @@ int main(){
       }
       }break;
       
-    case 'f':
     case 'F':{
       system("cls");
       int id_murid_hapus;
@@ -730,27 +729,26 @@ int main(){
       }
       }break;
       
-    case 'g':
     case 'G':{
-			konsul:
-			system("cls");
-			int pilihan;
-			cout << "+------------------------+\n";
-			cout << "|   Layanan Konsultasi   |\n";
-			cout << "+------------------------+\n";
-			cout << endl;
-			cout << "Pilihan: \n";
-			cout << "1.Tambah murid untuk konsultasi\n";
-			cout << "2.Giliran murid untuk konsultasi saat ini\n";
-			cout << "3.Ganti giliran konsultasi\n";
-			cout << endl << "Masukkan pilihan (dengan angka): "; cin >> pilihan;
-			cout << endl;
-			switch(pilihan){
-        case 1:{
-          system("cls");
-      		cout << "+------------------------+\n";
+		konsul:
+		system("cls");
+		int pilihan;
+		cout << "+------------------------+\n";
 		cout << "|   Layanan Konsultasi   |\n";
 		cout << "+------------------------+\n";
+		cout << endl;
+		cout << "Pilihan: \n";
+		cout << "1.Tambah murid untuk konsultasi\n";
+		cout << "2.Giliran murid untuk konsultasi saat ini\n";
+		cout << "3.Ganti giliran konsultasi\n";
+		cout << endl << "Masukkan pilihan (dengan angka): "; cin >> pilihan;
+		cout << endl;
+		switch(pilihan){
+        case 1:{
+        	system("cls");
+      		cout << "+------------------------+\n";
+			cout << "|   Layanan Konsultasi   |\n";
+			cout << "+------------------------+\n";
           cout << endl;
           pointer newElement;
           string id, nama, keterangan;
@@ -791,27 +789,26 @@ int main(){
           }
         }break;
         case 3:{
-          system("cls");
+        	system("cls");
       		cout << "+------------------------+\n";
-		cout << "|   Layanan Konsultasi   |\n";
-		cout << "+------------------------+\n";
-          cout << endl;
-          dequeue(Q, pDel);
-          cout << "Ganti giliran berhasil!\n";
-          cout << endl << "Kembali ke menu layanan konsultasi? (Y/N)\n";
-          cin >> pil;
-          if(pil == 'Y' || pil == 'y'){
-          	system("cls");
-            goto konsul;
-          } else{
-            system("cls");
-          	goto menu;
-          }
-          }break;
-      }
+			cout << "|   Layanan Konsultasi   |\n";
+			cout << "+------------------------+\n";
+            cout << endl;
+            dequeue(Q, pDel);
+            cout << "Ganti giliran berhasil!\n";
+            cout << endl << "Kembali ke menu layanan konsultasi? (Y/N)\n";
+            cin >> pil;
+            if(pil == 'Y' || pil == 'y'){
+              system("cls");
+              goto konsul;
+            } else{
+              system("cls");
+              goto menu;
+            }
+            }break;
+      	}
       }break;
       
-    case 'h':
     case 'H':{
       system("cls");
       goto exit;
