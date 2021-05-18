@@ -3,6 +3,7 @@
 #include <stdlib.h>
 using namespace std;
 
+//Implementasi Linked List
 struct pegawai{
     int id;
     string nama;
@@ -60,6 +61,7 @@ void createElementMurid(nodeMurid &pNew, int id, string nama, int tgl_lahir, str
     pNew->jk = jk;
     pNew->alamat = alamat;
     pNew->kelas = kelas;
+  	pNew->jurusan = jurusan;
     pNew->next = nullptr;
     pNew->prev = nullptr;
 }
@@ -200,277 +202,7 @@ void removeMurid(listMurid &head, nodeMurid &pDelete, int key){
     delete pDelete;
   }
 }
-/*
-void editPeg(listPeg &head, NodePtr &pSearch, char key){
-  int pilihan;
-  
-  cout << "Pilihan: \n";
-  cout << "1.Edit Data ID\n";
-  cout << "2.Edit Data Nama\n";
-  cout << "3.Edit Data Tanggal Lahir\n";
-  cout << "4.Edit Data Bulan Lahir\n";
-  cout << "5.Edit Data Tahun Lahir\n";
-  cout << "6.Edit Data JK\n";
-  cout << "7.Edit data Jabatan\n";
-  cout << "8.Edit data Gaji\n";
-  cout << endl;
-  cout << "Masukkan pilihan (dengan nomor): "; cin >> pilihan;
-  switch(pilihan){
-		case 1:
-      pSearch = head;
-  		while (pSearch != nullptr) {
-    		if (pSearch->id == key)
-      		break;
-    		pSearch = pSearch->nextPeg;
-  		}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> id;
-      pSearch -> id = temp -> id;
-    	break;
 
-  	case 2:
-			pSearch = head;
-  		while (pSearch != nullptr) {
-    		if (pSearch->nama == key)
-      		break;
-    		pSearch = pSearch->nextPeg;
-  		}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> nama;
-      pSearch -> nama = temp -> nama;
-  		break;
-      
-  	case 3:
-      pSearch = head;
-  		while (pSearch != nullptr) {
-    		if (pSearch->tgl_lahir == key)
-      		break;
-    		pSearch = pSearch->nextPeg;
- 	 		}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> tgl_lahir;
-      pSearch -> tgl_lahir = temp -> tgl_lahir;
- 		 	break;
-      
-  	case 4:
-      pSearch = head;
-  		while (pSearch != nullptr) {
-    		if (pSearch->bln_lahir == key)
-      		break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> bln_lahir;
-      pSearch -> bln_lahir = temp -> bln_lahir;
-  		break;
-      
-  	case 5:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->thn_lahir == key)
-        	break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> thn_lahir;
-      pSearch -> thn_lahir = temp -> thn_lahir;
-      break;
-      
-  	case 6:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->jk == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> jk;
-      pSearch -> jk = temp -> jk;
-  		break;
-      
-  	case 7:
-      pSearch = head;
-      while (pSearch != nullptr) {
-      	if (pSearch->jabatan == key)
-        	break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> jabatan;
-      pSearch -> jabatan = temp -> jabatan;
-  		break;
-      
-  	case 8:
-      pSearch = head;
-      while (pSearch != nullptr) {
-      	if (pSearch->gaji == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> gaji;
-      pSearch -> gaji = temp -> gaji;
-
-  		break;
-  }
-}
-
-void editMurid(listPeg &head, NodePtr &pSearch, char key){
-  int pilihan;
-  
-  cout << "Pilihan: \n";
-  cout << "1.Edit Data ID\n";
-  cout << "2.Edit Data Nama\n";
-  cout << "3.Edit Data Tanggal Lahir\n";
-  cout << "4.Edit Data Bulan Lahir\n";
-  cout << "5.Edit Data Tahun Lahir\n";
-  cout << "6.Edit Data JK\n";
-  cout << "7.Edit data Alamat\n";
-  cout << "8.Edit data Kelas\n";
-  cout << "9.Edit data Jurusan\n";
-  cout << "10.Edit data Nomor Telepon\n";
-  cout << endl;
-  cout << "Masukkan pilihan (dengan nomor): "; cin >> pilihan;
-  switch(pilihan){
-    case 1:
-    	pSearch = head;
-  		while (pSearch != nullptr) {
-    		if (pSearch->id == key)
-      		break;
-   	 		pSearch = pSearch->nextPeg;
-  		}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> id;
-      pSearch -> id = temp -> id;
-      break;
-      
-    case 2:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->nama == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> nama;
-      pSearch -> nama = temp -> nama;
-      break;
-  	case 3:
-    	pSearch = head;
-    	while (pSearch != nullptr) {
-      	if (pSearch->tgl_lahir == key)
-        	break;
-      	pSearch = pSearch->nextPeg;
-    	}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> tgl_lahir;
-      pSearch -> tgl_lahir = temp -> tgl_lahir;
-      break;
-
-		case 4:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->bln_lahir == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> bln_lahir;
-      pSearch -> bln_lahir = temp -> bln_lahir;
-      break;
-  
-		case 5:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->thn_lahir == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> thn_lahir;
-      pSearch -> thn_lahir = temp -> thn_lahir;
-      break;
-  
-		case 6:
-     pSearch = head;
-    	while (pSearch != nullptr) {
-      	if (pSearch->jk == key)
-        	break;
-      	pSearch = pSearch->nextPeg;
-    	}
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> jk;
-      pSearch -> jk = temp -> jk;
-      break;
-
-		case 7:
-    	pSearch = head;
-    	while (pSearch != nullptr) {
-      	if (pSearch->alamat == key)
-        	break;
-      	pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> alamat;
-      pSearch -> alamat = temp -> alamat;
-      break;
-  
-    case 8:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->kelas == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> kelas;
-      pSearch -> kelas = temp -> kelas;
-      break;
-  
-    case 9:
-      pSearch = head;
-      while (pSearch != nullptr) {
-        if (pSearch->jurusan == key)
-          break;
-        pSearch = pSearch->nextPeg;
-      }
-      nodePtr temp = nullptr;
-      cout "Masukkan update data: \n";
-      cin >> temp -> jurusan;
-      pSearch -> jurusan = temp -> jurusan;
-      break;
-  
-    case 10:
-    pSearch = head;
-    while (pSearch != nullptr) {
-      if (pSearch->no_telp == key)
-        break;
-      pSearch = pSearch->nextPeg;
-    }
-    nodePtr temp = nullptr;
-    cout "Masukkan update data: \n";
-    cin >> temp -> no_telp;
-    pSearch -> no_telp = temp -> no_telp;
-    break;
-  }
-}    
-*/
 //Implementasi Queue
 struct Node{
   string id;
@@ -565,7 +297,83 @@ void dequeue(Queue& Q, pointer delElement){
 }
 
 //Implementasi Stack
+struct ElementStack
+{
+    string nama;
+    ElementStack *next;
+};
 
+typedef ElementStack* pointerStack;
+typedef pointerStack Stack;
+Stack Top;
+
+bool isEmpty(Stack Top){
+    if(Top == nullptr){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void peek(Stack Top){
+	if(isEmpty(Top)){
+    	cout << "Data tidak tersedia!\n";
+    } else{
+    	cout << "Nama: " << Top->nama << endl;
+    }
+}
+
+void createStack(Stack& Top){
+    Top = nullptr;
+}
+
+void createElementStack(pointerStack& newElement, string nama){
+    newElement = new ElementStack;
+    newElement->nama = nama;
+    newElement->next = nullptr;
+}
+
+void push(Stack& Top, pointerStack newElement){
+    if(isEmpty(Top)){
+        Top = newElement;
+    } else{
+        newElement->next = Top;
+        Top = newElement;
+    }
+}
+
+void pop(Stack& Top, pointerStack& pDel){
+    if(isEmpty(Top)){
+        cout << "Saat ini, tidak ada guru yang tersedia!\n";
+        pDel = nullptr;
+    } else if(Top->next == nullptr){
+      	cout << "Guru dengan informasi:\n";
+      	peek(Top);
+        pDel = Top;
+        Top = nullptr;
+      	cout << "telah berhasil ditugaskan!\n";
+    } else{
+      	cout << "Guru dengan informasi:\n";
+      	peek(Top);
+        pDel = Top;
+        Top = Top->next;
+        pDel->next = nullptr;
+      	cout << "telah berhasil ditugaskan!\n";
+    }
+}
+
+void traversal(Stack Top){
+    pointerStack pHelp = Top;
+    if(isEmpty(Top)){
+        cout << "Data tidak tersedia!\n";
+    } else{
+        cout << "Daftar guru yang tersedia: \n";
+        do{
+            cout << "- " << pHelp->nama << "\n";
+            pHelp = pHelp->next;
+        } while (pHelp != nullptr);
+    }
+}
     
 int main(){
   system("cls");
@@ -573,13 +381,18 @@ int main(){
   listMurid dataMurid = nullptr;
   pointer newElement, pDel;
   createQueue(Q);
-  menu:
   char pilihan;
   nodePeg pSearchPeg, pDeletePeg, pNewPeg;
   nodeMurid pSearchMurid, pDeleteMurid, pNewMurid;
   char pil;
   string id, nama, keterangan; //Untuk layanan konsultasi
   int nilai; //Untuk layanan konsultasi
+  //variabel untuk layanan tambahan belajar
+  int opsi;
+  string nama_guru;
+  pointerStack newElementStack, pDelStack;
+  createStack(Top);
+  menu:
   cout << "+---------------------------------------+" << endl;
   cout << "|              RedelgiKu                |" << endl;
   cout << "+---------------------------------------+" << endl;
@@ -594,7 +407,8 @@ int main(){
   cout << "E.Hapus data pegawai\n";
   cout << "F.Hapus data murid\n";
   cout << "G.Layanan Konsultasi\n";
-  cout << "H.Tutup aplikasi\n";
+  cout << "H.Layanan tambahan belajar\n";
+  cout << "I.Tutup aplikasi\n";
   cout << "\n"; 
   cout << "Masukkan pilihan (dengan huruf): "; cin >> pilihan;
   cout << "+---------------------------------------+\n";
@@ -821,8 +635,109 @@ int main(){
       	}
       }break;
       
-    case 'h':
-    case 'H':{
+      case 'h': //Case untuk layanan belajar tambahan
+      case 'H':{
+       	   system("cls");
+      	    tambahan:
+        	cout << "+-------------------------------------+\n";
+      	    cout << "|   B E L A J A R   T A M B A H A N   |\n";
+            cout << "+-------------------------------------+\n";
+            cout << endl;
+            cout << "Pilihan: \n";
+            cout << "1.Tambah guru untuk belajar tambahan\n";
+            cout << "2.Guru yang tersedia saat ini\n";
+        	cout << "3.Ambil guru untuk mengajar tambahan\n";
+          	cout << "4.Tampilkan semua data guru\n";
+          	cout << "5.Kembali ke menu utama\n";
+            cout << endl << "Masukkan pilihan (dengan angka): "; cin >> opsi;
+            cout << endl;
+            switch(opsi){
+            case 1:{
+                system("cls");
+                cout << "+--------------------------------------+\n";
+                cout << "|   B E L A J A R   T A M B A H A N    |\n";
+                cout << "+--------------------------------------+\n";
+                cout << endl;
+                cout << "Masukkan informasi! \n";
+                cout << "Nama		: "; cin >> nama_guru;
+                createElementStack(newElementStack, nama_guru);
+                push(Top, newElementStack);
+                cout << endl << "Informasi guru berhasil ditambahkan!\n";
+                cout << endl << "Kembali ke menu belajar tambahan? (Y/N)\n";
+                cin >> pil;
+                if(pil == 'Y' || pil == 'y'){
+                  system("cls");
+                  goto tambahan;
+                } else{
+                  system("cls");
+                  goto menu;
+                }
+                }break;
+            case 2:{
+                system("cls");
+                cout << "+-------------------------------------+\n";
+                cout << "|   B E L A J A R   T A M B A H A N   |\n";
+                cout << "+-------------------------------------+\n";
+                cout << endl;
+                cout << "Guru yang tersedia: \n";
+                peek(Top);
+                cout << endl << "Kembali ke menu belajar tambahan? (Y/N)\n";
+                cin >> pil;
+                if(pil == 'Y' || pil == 'y'){
+                  system("cls");
+                  goto tambahan;
+                } else{
+                  system("cls");
+                  goto menu;
+                }
+                }break;
+            case 3:{
+                system("cls");
+                cout << "+-------------------------------------+\n";
+                cout << "|   B E L A J A R   T A M B A H A N   |\n";
+                cout << "+-------------------------------------+\n";
+                cout << endl;
+                pop(Top, pDelStack);
+                cout << endl << "Kembali ke menu belajar tambahan? (Y/N)\n";
+                cin >> pil;
+                if(pil == 'Y' || pil == 'y'){
+                  system("cls");
+                  goto tambahan;
+                } else{
+                  system("cls");
+                  goto menu;
+                }
+                }break;
+              case 4:{
+                system("cls");
+                cout << "+-------------------------------------+\n";
+                cout << "|   B E L A J A R   T A M B A H A N   |\n";
+                cout << "+-------------------------------------+\n";
+                cout << endl;
+                traversal(Top);
+                cout << endl << "Kembali ke menu belajar tambahan? (Y/N)\n";
+                cin >> pil;
+                if(pil == 'Y' || pil == 'y'){
+                  system("cls");
+                  goto tambahan;
+                } else{
+                  system("cls");
+                  goto menu;
+                }
+              	}break;
+              case 5:{
+              	system("cls");
+                goto menu;
+              }break;
+              default:{
+                system("cls");
+                goto tambahan;
+              	}break;
+            }
+    	}break;
+      
+    case 'i':
+    case 'I':{
       system("cls");
       goto exit;
       }break;
