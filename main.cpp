@@ -497,7 +497,7 @@ void createElement(pointer& newElement, string id, string nama, string keteranga
   newElement->id = id;
   newElement->nama = nama;
   newElement->keterangan = keterangan;
-  newElement->priority;
+  newElement->priority = priority;
   newElement->next = nullptr;
 }
  
@@ -565,9 +565,7 @@ void dequeue(Queue& Q, pointer delElement){
 }
 
 //Implementasi Stack
-void stackImplementation(){
-	
-}
+
     
 int main(){
   system("cls");
@@ -833,6 +831,6 @@ int main(){
       	goto menu;
     	}break;
   }
-  	exit:
-	return 0;
+  exit:
+  return 0;
 }
